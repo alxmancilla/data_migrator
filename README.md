@@ -23,9 +23,11 @@ Download and install employees.sql
 https://github.com/datacharmer/test_db
 
 Create employee database and imporr sample data:
+
 $ /usr/local/mysql/bin/mysql -u root -p --connect-expired-password  < employees.sql
 
 Validate employee database was successfully created.
+
 $ /usr/local/mysql/bin/mysql -u root -p --connect-expired-password  -t < test_employees_md5.sql
 
 Validate mongodb is up and running
