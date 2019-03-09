@@ -6,13 +6,15 @@ It also exemplifies how to translate relational data model into document data mo
 
 ## Prerrequisites
 
-Download and install MySQL Community Server 5.7.x  and MySQL Workbench 6.3.x
+Install MySQL Community Server 5.7.x  
 
 https://dev.mysql.com/downloads/mysql/
 
+Optionally, you can also install MySQL Workbench 6.3.x
+
 https://dev.mysql.com/downloads/workbench/
 
-Once install login as root and change temporary password using:
+Validate you have root access. Once you log in for first time, remember to change temporary password using:
 
 SET PASSWORD = PASSWORD('new_password');
 
@@ -22,13 +24,15 @@ Download and install employees.sql
 
 https://github.com/datacharmer/test_db
 
-Create employee database and imporr sample data:
+Create employee database and import sample data:
 
 $ /usr/local/mysql/bin/mysql -u root -p --connect-expired-password  < employees.sql
 
 Validate employee database was successfully created.
 
 $ /usr/local/mysql/bin/mysql -u root -p --connect-expired-password  -t < test_employees_md5.sql
+
+As a best practice, create an additional user with read access to employees database in order to avoid using root for executing this migration process.
 
 Validate mongodb is up and running
 
