@@ -1,8 +1,9 @@
 # data_migrator
-Demo script for migrating MySQL data into MongoDB. It also exemplifies how to translate relational data model to document data model.
+Demo script for migrating MySQL data into MongoDB. 
+It also exemplifies how to translate relational data model into document data model.
 
 
-## Prerrquisites
+## Prerrequisites
 
 Download and install MySQL Community Server 5.7.x  and MySQL Workbench 6.3.x
 https://dev.mysql.com/downloads/mysql/
