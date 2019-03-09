@@ -4,7 +4,6 @@ import mysql.connector
 import pymongo
 
 
-
 def get_MySQL_Cnx():
     # For local use
     cnx = mysql.connector.connect(user='db_user', password='db_password',
@@ -12,7 +11,6 @@ def get_MySQL_Cnx():
                               database='employees')
     return cnx
 
-cnx_3 = get_MySQL_Cnx()
 
 def get_employee_departments(_cnx, emp_no):
         _cursor = _cnx.cursor()
@@ -110,9 +108,7 @@ def get_employee_titles(_cnx, emp_no):
 
 def migrate_employee_data():
 # Connection to Mongo DB
-    cnx = get_MySQL_Cnx()
     cursor = cnx.cursor()
-    cnx_2 = get_MySQL_Cnx()
     mdb_cnx = get_MDB_cnx()
     
     print("Connection established successfully!!!")
@@ -181,5 +177,8 @@ def get_MDB_cnx():
 
 if __name__ == "__main__":
     # For local use
+    cnx = get_MySQL_Cnx()
+    cnx_2 = get_MySQL_Cnx()
+    cnx_3 = get_MySQL_Cnx()
     migrate_employee_data()
     
