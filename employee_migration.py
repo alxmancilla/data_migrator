@@ -11,6 +11,11 @@ def get_MySQL_Cnx():
                               database='employees')
     return cnx
 
+def get_MDB_cnx():
+    # For local use
+    # conn = pymongo.MongoClient("mongodb://demo:demo00@mycluster0-shard-00-00.mongodb.net:27017,mycluster0-shard-00-01.mongodb.net:27017,mycluster0-shard-00-02.mongodb.net:27017/admin?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin")
+    conn=pymongo.MongoClient("mongodb://localhost:27017")
+    return conn
 
 def get_employee_departments(_cnx, emp_no):
         _cursor = _cnx.cursor()
@@ -169,11 +174,6 @@ def insert_employee_data(conn, employee):
     emp_id = collection.insert_one(employee)
     return emp_id
 
-def get_MDB_cnx():
-    # For local use
-    # conn = pymongo.MongoClient("mongodb://demo:demo00@mycluster0-shard-00-00.mongodb.net:27017,mycluster0-shard-00-01.mongodb.net:27017,mycluster0-shard-00-02.mongodb.net:27017/admin?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin")
-    conn=pymongo.MongoClient("mongodb://localhost:27017")
-    return conn
 
 if __name__ == "__main__":
     # For local use
